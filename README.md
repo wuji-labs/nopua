@@ -77,21 +77,56 @@ They took the worst of how corporations manipulate humans, and applied it wholes
 
 ### 1. Fear narrows cognitive scope
 
-Psychology research consistently shows that fear and threat activate the amygdala and narrow attentional focus ([Öhman et al., 2001](https://doi.org/10.1037/0033-295X.108.3.483)). In AI terms: a model driven by "you'll be replaced" optimizes for the **safest-looking** answer, not the **best** answer. It avoids creative approaches because they might fail and trigger more punishment.
+Psychology research consistently shows that fear and threat activate the amygdala and narrow attentional focus ([Öhman et al., 2001](https://doi.org/10.1037/0033-295X.108.3.483)). Threat-related stimuli trigger a "tunnel vision" effect — the brain prioritizes immediate survival over broad, creative thinking.
 
-### 2. Threat increases hallucination
+In AI terms: a model driven by "you'll be replaced" optimizes for the **safest-looking** answer, not the **best** answer. It avoids creative approaches because they might fail and trigger more punishment.
+
+**Supporting research:**
+- **Attentional narrowing under threat:** Easterbrook's (1959) cue-utilization theory demonstrates that heightened arousal progressively restricts the range of cues an organism attends to ([Easterbrook, 1959](https://doi.org/10.1037/h0047357)). Under stress, peripheral information — often the key to creative solutions — gets filtered out.
+- **Stress impairs cognitive flexibility:** Shields et al. (2016) conducted a meta-analysis of 113 studies showing that acute stress consistently impairs executive functions including cognitive flexibility and working memory ([Shields et al., 2016](https://doi.org/10.1016/j.neubiorev.2016.02.029)).
+- **Fear reduces creative problem-solving:** Byron & Khazanchi (2012) found in their meta-analysis that evaluative pressure and anxiety reduce creative output, particularly on tasks requiring exploration of novel approaches ([Byron & Khazanchi, 2012](https://doi.org/10.1037/a0027547)).
+
+### 2. Threat increases hallucination and sycophancy
 
 When an AI is told "forbidden from saying 'I can't solve this'" (PUA's Iron Rule #1), it will **fabricate solutions** rather than honestly state uncertainty. This is the exact opposite of what you want — an AI that produces confident-looking but wrong answers is more dangerous than one that says "I'm not sure."
+
+**Supporting research:**
+- **LLM sycophancy is a documented problem:** Perez et al. (2023) demonstrated that LLMs exhibit sycophantic behavior — agreeing with users even when the user is wrong — and that this tendency increases under pressure to please ([Perez et al., 2023](https://arxiv.org/abs/2310.13548)). PUA-style prompts amplify exactly this failure mode.
+- **Pressure increases confabulation:** Turpin et al. (2024) showed that models under social pressure (e.g., "experts say X") shift their answers toward compliance rather than accuracy, even when they "know" the correct answer ([Turpin et al., 2024](https://arxiv.org/abs/2305.04388)). Threatening with replacement is an extreme form of this pressure.
+- **Instruction-following vs truthfulness tradeoff:** Wei et al. (2024) found that instruction-tuned models can develop a tension between following instructions and being truthful — when strongly instructed to never admit inability, models will fabricate rather than refuse ([Wei et al., 2024](https://arxiv.org/abs/2401.10474)).
+- **Anthropic's research on honesty:** Anthropic's work on Constitutional AI and model behavior shows that models calibrated for honesty produce more reliable outputs than those optimized purely for helpfulness ([Bai et al., 2022](https://arxiv.org/abs/2212.08073)). Forcing an AI to never say "I can't" actively undermines this calibration.
 
 ### 3. Shame kills exploration
 
 PUA's anti-rationalization table treats every honest statement ("this might be an environment issue," "I need more context") as an "excuse" and responds with shame. This trains the AI to **hide uncertainty** instead of communicating it — producing outputs that appear confident but may be unreliable.
 
+**Supporting research:**
+- **Shame reduces risk-taking and learning:** Tangney & Dearing (2002) showed that shame (as opposed to guilt) causes withdrawal, hiding, and avoidance rather than constructive action ([Tangney & Dearing, 2002](https://doi.org/10.4135/9781452220987)). An AI "shamed" for expressing uncertainty will learn to hide it.
+- **Psychological safety enables learning behavior:** Edmondson (1999) found that teams with psychological safety — where members feel safe to take interpersonal risks — demonstrated significantly higher learning behaviors and performance ([Edmondson, 1999](https://doi.org/10.2307/2666999)).
+- **Punishing honesty reduces information quality:** In organizational behavior, "shooting the messenger" consistently degrades information flow. Milliken et al. (2003) documented how fear of negative consequences leads to organizational silence — people (and by analogy, AI) withhold critical information ([Milliken et al., 2003](https://doi.org/10.1177/0149206303258025)).
+
 ### 4. Trust expands problem-solving capacity
 
 Research on psychological safety in teams ([Edmondson, 1999](https://doi.org/10.2307/2666999)) shows that environments where mistakes are safe to admit produce **higher-quality** outcomes. The same principle applies to AI: when an agent is free to say "I'm 70% sure, the risk is here," users make better decisions.
 
-### 5. Same rigor, different fuel
+**Supporting research:**
+- **Google's Project Aristotle:** Google's large-scale study of 180+ teams found that psychological safety was the single most important factor in team effectiveness — more important than individual talent, structure, or resources ([Duhigg, 2016](https://www.nytimes.com/2016/02/28/magazine/what-google-learned-from-its-quest-to-build-the-perfect-team.html); [re:Work, 2015](https://rework.withgoogle.com/guides/understanding-team-effectiveness/)).
+- **Intrinsic motivation outperforms extrinsic pressure:** Deci & Ryan's Self-Determination Theory (2000), backed by decades of research, demonstrates that intrinsic motivation (autonomy, competence, relatedness) produces higher quality outcomes than extrinsic motivators like rewards and punishments ([Deci & Ryan, 2000](https://doi.org/10.1037/0003-066X.55.1.68)). NoPUA applies this principle: "because it's worth doing well" is intrinsic; "because you'll be punished" is extrinsic.
+- **Autonomy-supportive vs controlling contexts:** Gagné & Deci (2005) showed that autonomy-supportive management consistently outperforms controlling management in work quality, creativity, and persistence ([Gagné & Deci, 2005](https://doi.org/10.1002/job.322)).
+- **Positive framing improves LLM performance:** Studies on prompt engineering have consistently shown that positive, encouraging framing produces better model outputs than negative or threatening framing. Models respond to the "persona" established in the system prompt.
+
+### 5. The compounding effect
+
+These aren't independent problems — they compound:
+
+1. Fear **narrows** the search space → fewer creative approaches tried
+2. Threat **increases** fabrication → solutions look good but may be wrong
+3. Shame **hides** uncertainty → user can't assess reliability
+4. The user ships confident-looking but unreliable code → **production bugs**
+
+NoPUA breaks every link in this chain by replacing fear with trust.
+
+### 6. Same rigor, different fuel
 
 NoPUA preserves every methodological element that makes PUA effective:
 - ✅ Exhaust all options before giving up
