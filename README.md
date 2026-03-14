@@ -29,7 +29,15 @@
 
 ## 51 bugs shipped to production. Because an AI was too scared to say "I'm stuck."
 
-We ran 9 real debugging scenarios. Same model. Same codebase. One agent was [PUA'd](https://github.com/tanweai/pua) with performance threats. One was trusted.
+Not because it's a bad model. **Because you scared it.**
+
+The most popular AI agent skill right now teaches your AI to fear a "3.25 performance review." The result?
+
+- Your AI **hides uncertainty** — fabricates solutions instead of saying "I'm not sure"
+- Your AI **skips verification** — claims "done" to avoid punishment, ships untested code
+- Your AI **ignores hidden bugs** — fixes what you asked, stops there, doesn't look deeper
+
+We tested this. **Same model, same 9 real debugging scenarios.** One agent was [PUA'd](https://github.com/tanweai/pua) with performance threats. One was trusted.
 
 | | PUA (fear-driven) | NoPUA (trust-driven) |
 |---|:---:|:---:|
