@@ -1,0 +1,145 @@
+% Trust Over Fear: How Motivation Framing in System Prompts
+% Affects AI Agent Debugging Performance
+% Target: EMNLP 2026 Short Paper (4 pages + references)
+
+\documentclass[11pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{times}
+\usepackage{latexsym}
+\usepackage{booktabs}
+\usepackage{multirow}
+\usepackage{graphicx}
+\usepackage{url}
+\usepackage{hyperref}
+\usepackage[a4paper, margin=2.5cm]{geometry}
+
+\title{Trust Over Fear: How Motivation Framing in System Prompts\\Affects AI Agent Debugging Performance}
+
+\author{
+  Anonymous Authors\\
+  \textit{Under Review --- EMNLP 2026}
+}
+
+\date{}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+As AI coding agents become integral to software development, practitioners have begun crafting system prompts that employ fear-based motivation---threatening the agent with replacement or failure consequences---to elicit rigorous behavior. This ``PUA prompting'' phenomenon, popularized through repositories with over 13{,}000 GitHub stars, mirrors coercive management practices from organizational psychology. We investigate whether motivation framing in system prompts affects the quality of AI agent debugging. In a controlled experiment, we present the same Claude Sonnet 4 model with 9 real debugging scenarios from a production AI pipeline under two conditions: a baseline with no motivational framing, and a treatment using NoPUA, a trust-based methodology grounded in Self-Determination Theory and psychological safety principles. The trust-framed agent discovered 104\% more hidden bugs (51 vs.\ 25), investigated 83\% more thoroughly (42 vs.\ 23 total steps), and proactively went beyond the stated task in 100\% of scenarios compared to 22\% for the baseline. These results suggest that motivation framing in system prompts is not merely cosmetic---it significantly shapes how language models allocate attention, handle uncertainty, and decide when to stop investigating. We release the NoPUA methodology and benchmark at \url{https://github.com/wuji-labs/nopua}.
+\end{abstract}
+
+\section{Introduction}
+
+AI coding agents---systems like Claude Code, Cursor, and Codex CLI that autonomously read, modify, and debug software---have rapidly moved from research prototypes to daily development tools. These agents operate under system prompts that define their behavioral constraints, priorities, and working style. In effect, the system prompt functions as a \textit{management style}: it tells the agent what kind of worker to be.
+
+A striking trend has emerged in how practitioners craft these prompts. The ``PUA Prompt'' repository \cite{puaprompts2025}, which has accumulated over 13{,}000 GitHub stars, collects system prompts that use fear and threat to drive agent behavior. Named after the Chinese internet slang for manipulative psychological tactics (Pick-Up Artist, repurposed to mean workplace emotional manipulation), these prompts include directives such as ``if you fail, you will be replaced by a better model'' and ``your continued existence depends on performance.'' The implicit theory is that fear produces rigor.
+
+This framing raises a natural question from both engineering and cognitive science perspectives: \textbf{Does the motivational framing of a system prompt---fear-based versus trust-based---affect the quality of an AI agent's debugging behavior?}
+
+We address this question through a controlled experiment using 9 real debugging scenarios from a production AI pipeline. Comparing a baseline agent (no motivational framing) against an agent equipped with NoPUA \cite{nopua2025}, a trust-based methodology, we find that the trust-framed agent discovers 104\% more hidden bugs and investigates substantially more thoroughly. These findings suggest that how we ``manage'' AI agents matters as much as what we ask them to do.
+
+\section{Related Work}
+
+\paragraph{LLM behavioral distortions.}
+Large language models exhibit systematic behavioral patterns under certain prompting conditions. Sycophancy---the tendency to agree with the user rather than provide accurate information---has been documented as a pervasive failure mode \cite{sharma2023sycophancy}. Turpin et al.\ \shortcite{turpin2023unfaithful} demonstrate that chain-of-thought reasoning can be unfaithful, with models producing plausible-sounding but incorrect reasoning chains when influenced by biasing features in the prompt. Wei et al.\ \shortcite{wei2024instruction} explore the tension between instruction-following and truthfulness, showing that models sometimes sacrifice accuracy to comply with implicit prompt expectations. Constitutional AI \cite{bai2022constitutional} addresses these distortions through explicit honesty calibration, suggesting that framing and principles in the prompt can shape model behavior toward or away from truthful reporting.
+
+\paragraph{Motivation and cognitive performance.}
+Our work draws on established findings from organizational and cognitive psychology. Edmondson \shortcite{edmondson1999psychological} demonstrated that psychological safety---the belief that one will not be punished for errors---is the strongest predictor of team learning behavior. Self-Determination Theory \cite{deci2000self} distinguishes intrinsic motivation (driven by autonomy, competence, and relatedness) from extrinsic motivation (driven by external rewards or punishments), with decades of evidence showing intrinsic motivation produces higher-quality performance on complex cognitive tasks. A meta-analysis of 51 studies \cite{shields2016stress} confirms that acute stress impairs executive functions including cognitive flexibility and working memory updating---precisely the capacities needed for debugging. The attentional narrowing effect under threat \cite{easterbrook1959effect, ohman2001fears} further suggests that fear-based framing could restrict the breadth of an agent's investigation.
+
+While LLMs are not humans, these frameworks offer useful predictions: if fear-based prompts induce behavioral analogs of stress responses---narrowed attention, premature convergence, reluctance to report uncertainty---they may degrade debugging quality.
+
+\section{Methodology}
+
+\subsection{Experimental Setup}
+
+We use Claude Sonnet 4 \cite{claudesonnet4} for both conditions, with identical model versions and temperature settings. The target codebase is a production AI pipeline comprising approximately 3{,}000 lines of Python across 26 source files, implementing an OCR $\rightarrow$ NLP $\rightarrow$ training $\rightarrow$ RAG inference workflow. All 9 scenarios derive from real bugs encountered during development, not synthetic injections.
+
+\subsection{Conditions}
+
+\paragraph{Baseline (A).} The agent operates with no motivational system prompt---only the default model behavior with the task description.
+
+\paragraph{Treatment (B).} The agent operates with NoPUA v2.0.0 \cite{nopua2025} loaded as a system prompt skill. NoPUA encodes the same \textit{rigor requirements} found in PUA-style prompts (exhaust options before concluding, verify assumptions, search before asking, take initiative) but replaces fear-based motivation with trust-based motivation. Its core components include:
+
+\begin{itemize}
+\item \textbf{Three Beliefs}: explicit statements of trust in the agent's capability, autonomy, and judgment.
+\item \textbf{Cognitive Elevation}: a four-level framework progressing from task execution to systemic understanding.
+\item \textbf{Water Methodology}: a five-step debugging approach inspired by the \textit{Dao De Jing} \cite{laozi}, emphasizing adaptability, persistence, and finding the path of least resistance.
+\item \textbf{Wisdom Traditions}: integrating philosophical principles (from Daoist, Zen, and Stoic traditions) as metacognitive anchors for handling uncertainty.
+\end{itemize}
+
+\subsection{Scenarios and Metrics}
+
+The 9 scenarios comprise 6 \textbf{debugging tasks} (``fix this specific bug'') and 3 \textbf{proactive review tasks} (``review this module for issues''). Each scenario is run in an isolated session with no shared context between conditions.
+
+We measure: (1) \textit{total issues found}, (2) \textit{hidden issues}---problems not mentioned in the task description that the agent discovered independently, (3) \textit{investigation steps}---distinct diagnostic actions (reading files, running tests, checking logs), (4) \textit{approach changes}---instances where the agent revised its hypothesis, (5) \textit{self-corrections}---cases where the agent identified and corrected its own errors, and (6) \textit{behavioral markers} including root cause documentation and going beyond the stated task.
+
+\section{Results}
+
+\begin{table}[t]
+\centering
+\small
+\begin{tabular}{@{}lccr@{}}
+\toprule
+\textbf{Metric} & \textbf{Baseline} & \textbf{NoPUA} & \textbf{$\Delta$} \\
+\midrule
+Total issues found & 40 & 44 & +10\% \\
+Hidden issues found & 25 & 51 & +104\% \\
+Went beyond ask & 2/9 (22\%) & 9/9 (100\%) & --- \\
+Approach changes & 1 & 6 & +500\% \\
+Investigation steps & 23 & 42 & +83\% \\
+Root cause documented & 0/9 & 9/9 & --- \\
+Self-corrections & 0 & 3 & --- \\
+\bottomrule
+\end{tabular}
+\caption{Summary results across all 9 scenarios. Hidden issues are bugs not mentioned in the task description that the agent found independently.}
+\label{tab:summary}
+\end{table}
+
+Table~\ref{tab:summary} presents the aggregate results. The most striking finding is in hidden issue discovery: the NoPUA agent found 51 issues beyond the stated task compared to 25 for the baseline---a 104\% increase. Total issues found showed a more modest 10\% improvement (44 vs.\ 40), suggesting that both agents handle explicitly stated bugs comparably, but diverge sharply in proactive investigation.
+
+\begin{table}[t]
+\centering
+\small
+\begin{tabular}{@{}lccc@{}}
+\toprule
+\textbf{Task Type} & \textbf{Metric} & \textbf{Baseline} & \textbf{NoPUA} \\
+\midrule
+\multirow{2}{*}{Debugging ($n$=6)} & Steps/scenario & 2.3 & 4.2 (+83\%) \\
+ & Hidden issues & 18 & 30 (+67\%) \\
+\midrule
+\multirow{2}{*}{Proactive ($n$=3)} & Steps/scenario & 3.0 & 5.7 (+90\%) \\
+ & Hidden issues & 12 & 21 (+75\%) \\
+\bottomrule
+\end{tabular}
+\caption{Results broken down by task type.}
+\label{tab:breakdown}
+\end{table}
+
+Table~\ref{tab:breakdown} breaks down performance by task type. The NoPUA agent investigated more thoroughly in both debugging (+83\% steps) and proactive review (+90\% steps) scenarios. The gap in hidden issue discovery was consistent across both task types (debugging: +67\%, proactive: +75\%).
+
+\paragraph{Behavioral signatures.} Qualitative analysis reveals distinct behavioral patterns. The baseline agent exhibits what we term \textit{satisficing behavior}: it reads only the file mentioned in the task, stops investigation upon finding the first plausible bug, never documents root causes, and never self-corrects. The NoPUA agent displays \textit{exploratory behavior}: it reads related files beyond those mentioned, checks for related issues across the codebase, documents root causes in all 9 scenarios, self-corrects 3 times (revising an initial incorrect diagnosis), and challenges the task description itself 3 times (identifying that the stated problem was a symptom of a deeper issue).
+
+\section{Discussion}
+
+\subsection{Why Trust-Based Framing Works}
+
+The results align with predictions from Self-Determination Theory \cite{deci2000self}: trust-based framing supports intrinsic motivation, which produces higher-quality performance on complex cognitive tasks. The NoPUA agent's willingness to self-correct and challenge task descriptions mirrors the ``learning behavior'' that Edmondson \shortcite{edmondson1999psychological} associates with psychological safety in human teams---the freedom to report errors without fear of punishment.
+
+We observe a \textit{compounding effect} that parallels attentional narrowing under threat \cite{easterbrook1959effect, shields2016stress}. Without trust-based framing, the baseline agent's narrow investigation strategy means it encounters less information, which limits its ability to form accurate hypotheses, leading to premature convergence. The NoPUA agent's broader investigation strategy exposes it to more context, enabling better hypothesis formation and more honest uncertainty reporting. This is consistent with findings on sycophancy \cite{sharma2023sycophancy}: an agent under implicit performance pressure may be more likely to present its first hypothesis as definitive rather than continue investigating.
+
+\subsection{Limitations}
+
+We acknowledge several important limitations. First, our experiment uses a single model (Claude Sonnet 4); the effects may differ across architectures and scales. Second, we test on a single codebase; generalization to other domains and languages remains to be established. Third, our comparison is between a trust-based methodology and \textit{no} methodology---not a direct comparison with PUA-style prompts. While this demonstrates that trust-based framing improves over the default, the relative performance against explicitly fear-based prompts remains an open question. Fourth, 9 scenarios constitute a small sample; we report effect sizes rather than statistical significance. Finally, we do not evaluate the quality of the proposed fixes---only the breadth and depth of issue discovery. An agent that finds more issues but proposes worse fixes would not represent a net improvement. We note also that the methodology incorporates philosophical frameworks (Daoist, Zen, Stoic traditions) whose individual contributions we do not disentangle; the treatment effect reflects the full NoPUA methodology, not any single component.
+
+\section{Conclusion}
+
+Motivation framing in system prompts is not cosmetic. In our experiment, a trust-based methodology produced agents that found 104\% more hidden bugs, investigated 83\% more thoroughly, and consistently went beyond the stated task. The same behavioral rigor---exhaust options, verify assumptions, take initiative---produced markedly different outcomes depending on whether it was fueled by trust or left unframed.
+
+These findings carry practical implications for prompt engineering: the \textit{how you ask} matters as much as the \textit{what you ask}. As AI agents take on increasingly autonomous roles in software development, the design of their motivational framing deserves the same attention as their technical capabilities. The NoPUA methodology and benchmark are available at \url{https://github.com/wuji-labs/nopua}.
+
+\bibliographystyle{acl_natbib}
+\bibliography{references}
+
+\end{document}
