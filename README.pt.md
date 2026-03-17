@@ -407,6 +407,32 @@ Porque 2.500 anos atrás, alguém descobriu que a melhor liderança não parece 
 
 Poderia, mas vão entrar em conflito. PUA diz à IA "você será substituído se falhar." NoPUA diz à IA "você é capaz e isso vale a pena ser bem feito." São estados mentais fundamentalmente diferentes. Escolha um.
 
+## Avançado: Integração personalizada para usuários avançados
+
+O NoPUA foi projetado como um skill independente. No entanto, se você já tem um sistema maduro de skills (SOUL.md, AGENTS.md, regras de fluxo de trabalho personalizadas, etc.), os 29KB da versão completa podem se sobrepor à sua metodologia existente ou conflitar com seus padrões de fluxo de trabalho.
+
+**Isso é esperado.** O NoPUA inclui intencionalmente tanto o "Dao" (filosofia, crenças, framework cognitivo) quanto o "Shu" (metodologia, checklists, processos). A maioria dos usuários precisa de ambos. Usuários avançados podem já ter o "Shu" coberto.
+
+### Opção 1: Usar a versão completa (recomendado para a maioria)
+
+Basta instalar. 29KB representam apenas ~3-5% de uma janela de contexto de 128K-200K. A redundância é intencional — múltiplas formulações ajudam modelos mais fracos a entender a intenção.
+
+### Opção 2: Extrair o núcleo espiritual (usuários avançados)
+
+Se você já tem regras de fluxo de trabalho e só precisa da camada filosófica única do NoPUA, extraia o "Dao" e integre ao seu próprio prompt de sistema (`claude.md`, `AGENTS.md`, etc.):
+
+**Exclusivo do NoPUA (manter):** Três crenças, Elevação cognitiva, Vozes interiores, Sete Caminhos, Autoavaliação honesta, Saída responsável
+
+**Sobrepõe-se a skills comuns (pular se já coberto):** Metodologia da Água 5 passos, Checklist de entrega, Espectro de proatividade, Protocolo Agent Team
+
+Template lite: [`examples/lite-template.md`](examples/lite-template.md) (~3KB)
+
+### Opção 3: Carregamento situacional
+
+Não instalar o NoPUA por padrão. Quando encontrar um problema difícil, carregue manualmente: digite `/nopua` na conversa.
+
+> 大道至簡 — O Grande Caminho é simples. Comece com a versão completa. Ao internalizar o Dao, você saberá naturalmente o que manter e o que soltar.
+
 ## Contribuindo
 
 PRs são bem-vindos. Se você tem ideias de formas melhores de guiar IA com sabedoria em vez de medo, abra uma issue.

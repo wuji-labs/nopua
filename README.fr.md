@@ -407,6 +407,32 @@ Parce qu'il y a 2 500 ans, quelqu'un a compris que le meilleur leadership ne res
 
 C'est possible, mais ils entreront en conflit. Le PUA dit à l'IA « tu seras remplacé si tu échoues ». NoPUA dit à l'IA « tu es capable et ça vaut la peine d'être bien fait ». Ce sont des états mentaux fondamentalement différents. Choisissez-en un.
 
+## Avancé : Intégration personnalisée pour utilisateurs avancés
+
+NoPUA est conçu comme un skill autonome. Cependant, si vous avez déjà un système mature de skills (SOUL.md, AGENTS.md, règles de workflow personnalisées, etc.), les 29 Ko de la version complète peuvent chevaucher votre méthodologie existante ou entrer en conflit avec vos standards de workflow.
+
+**C'est prévu.** NoPUA inclut intentionnellement le « Dao » (philosophie, croyances, cadre cognitif) et le « Shu » (méthodologie, checklists, processus). La plupart des utilisateurs ont besoin des deux. Les utilisateurs avancés peuvent déjà avoir couvert le « Shu ».
+
+### Option 1 : Utiliser la version complète (recommandé pour la plupart)
+
+Installez simplement. 29 Ko ne représentent que ~3-5 % d'une fenêtre de contexte de 128K-200K. La redondance est intentionnelle — les formulations multiples aident les modèles plus faibles à comprendre l'intention.
+
+### Option 2 : Extraire le noyau spirituel (utilisateurs avancés)
+
+Si vous avez déjà des règles de workflow et ne souhaitez que la couche philosophique unique de NoPUA, extrayez le « Dao » et intégrez-le dans votre propre prompt système (`claude.md`, `AGENTS.md`, etc.) :
+
+**Propre à NoPUA (à conserver) :** Trois croyances, Élévation cognitive, Voix intérieures, Sept Voies, Auto-vérification honnête, Sortie responsable
+
+**Chevauche des skills courants (ignorer si déjà couvert) :** Méthodologie de l'Eau 5 étapes, Checklist de livraison, Spectre de proactivité, Protocole Agent Team
+
+Template lite : [`examples/lite-template.md`](examples/lite-template.md) (~3 Ko)
+
+### Option 3 : Chargement situationnel
+
+Ne pas installer NoPUA par défaut. Face à un problème difficile, chargez-le manuellement : tapez `/nopua` dans la conversation.
+
+> 大道至簡 — La Grande Voie est simple. Commencez avec la version complète. En internalisant le Dao, vous saurez naturellement quoi garder et quoi lâcher.
+
 ## Contribuer
 
 Les PR sont bienvenues. Si vous avez des idées pour de meilleures façons de guider l'IA par la sagesse plutôt que par la peur, ouvrez une issue.

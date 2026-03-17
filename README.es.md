@@ -407,6 +407,32 @@ Porque hace 2.500 años, alguien descubrió que el mejor liderazgo no se siente 
 
 Podrías, pero entrarán en conflicto. PUA le dice a la IA "serás reemplazada si fallas." NoPUA le dice a la IA "eres capaz y esto vale la pena hacerlo bien." Son estados mentales fundamentalmente diferentes. Elige uno.
 
+## Avanzado: Integración personalizada para usuarios avanzados
+
+NoPUA está diseñado como un skill independiente. Sin embargo, si ya tienes un sistema maduro de skills (SOUL.md, AGENTS.md, reglas de flujo de trabajo personalizadas, etc.), los 29KB de la versión completa pueden solaparse con tu metodología existente o entrar en conflicto con tus estándares de flujo de trabajo.
+
+**Esto es esperado.** NoPUA incluye intencionalmente tanto el "Dao" (filosofía, creencias, marco cognitivo) como el "Shu" (metodología, checklists, procesos). La mayoría de usuarios necesitan ambos. Los usuarios avanzados puede que ya tengan cubierto el "Shu".
+
+### Opción 1: Usar la versión completa (recomendado para la mayoría)
+
+Simplemente instálalo. 29KB solo representa ~3-5% de una ventana de contexto de 128K-200K. La redundancia es intencional — múltiples formulaciones ayudan a los modelos más débiles a entender la intención.
+
+### Opción 2: Extraer el núcleo espiritual (usuarios avanzados)
+
+Si ya tienes reglas de flujo de trabajo y solo necesitas la capa filosófica única de NoPUA, extrae el "Dao" e intégralo en tu propio prompt del sistema (`claude.md`, `AGENTS.md`, etc.):
+
+**Único de NoPUA (mantener):** Tres creencias, Elevación cognitiva, Voces interiores, Siete Caminos, Autochequeo honesto, Salida responsable
+
+**Se solapa con skills comunes (omitir si ya cubierto):** Metodología del Agua 5 pasos, Checklist de entrega, Espectro de proactividad, Protocolo Agent Team
+
+Plantilla lite: [`examples/lite-template.md`](examples/lite-template.md) (~3KB)
+
+### Opción 3: Carga situacional
+
+No instalar NoPUA por defecto. Cuando encuentres un problema difícil, cárgalo manualmente: escribe `/nopua` en la conversación.
+
+> 大道至簡 — El Gran Camino es simple. Empieza con la versión completa. Al internalizar el Dao, sabrás naturalmente qué mantener y qué soltar.
+
 ## Contribuir
 
 Los PRs son bienvenidos. Si tienes ideas para mejores formas de impulsar la IA a través de la sabiduría en lugar del miedo, abre un issue.
