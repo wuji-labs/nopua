@@ -300,8 +300,8 @@ NoPUAは、PUAを効果的にしているすべての方法論的要素を保持
 ### Claude Code
 
 ```bash
-mkdir -p ~/.claude/skills/nopua
-curl -o ~/.claude/skills/nopua/SKILL.md \
+mkdir -p ~/.claude/skills/nopua \
+  && curl -o ~/.claude/skills/nopua/SKILL.md \
   https://raw.githubusercontent.com/wuji-labs/nopua/main/skills/nopua/SKILL.md
 ```
 
@@ -309,26 +309,26 @@ curl -o ~/.claude/skills/nopua/SKILL.md \
 
 ```bash
 # グローバルインストール
-mkdir -p ~/.codex/skills/nopua
-curl -o ~/.codex/skills/nopua/SKILL.md \
+mkdir -p ~/.codex/skills/nopua \
+  && curl -o ~/.codex/skills/nopua/SKILL.md \
   https://raw.githubusercontent.com/wuji-labs/nopua/main/codex/nopua/SKILL.md
 
 # /nopua コマンドも使いたい場合
-mkdir -p ~/.codex/prompts
-curl -o ~/.codex/prompts/nopua.md \
+mkdir -p ~/.codex/prompts \
+  && curl -o ~/.codex/prompts/nopua.md \
   https://raw.githubusercontent.com/wuji-labs/nopua/main/commands/nopua.md
 
 # プロジェクトレベルのインストール
-mkdir -p .agents/skills/nopua
-curl -o .agents/skills/nopua/SKILL.md \
+mkdir -p .agents/skills/nopua \
+  && curl -o .agents/skills/nopua/SKILL.md \
   https://raw.githubusercontent.com/wuji-labs/nopua/main/codex/nopua/SKILL.md
 ```
 
 ### Cursor
 
 ```bash
-mkdir -p .cursor/rules
-curl -o .cursor/rules/nopua.mdc \
+mkdir -p .cursor/rules \
+  && curl -o .cursor/rules/nopua.mdc \
   https://raw.githubusercontent.com/wuji-labs/nopua/main/cursor/rules/nopua.mdc
 ```
 
@@ -336,13 +336,13 @@ curl -o .cursor/rules/nopua.mdc \
 
 ```bash
 # オプション1：ステアリングファイル（推奨）
-mkdir -p .kiro/steering
-curl -o .kiro/steering/nopua.md \
+mkdir -p .kiro/steering \
+  && curl -o .kiro/steering/nopua.md \
   https://raw.githubusercontent.com/wuji-labs/nopua/main/kiro/steering/nopua.md
 
 # オプション2：エージェントスキル
-mkdir -p .kiro/skills/nopua
-curl -o .kiro/skills/nopua/SKILL.md \
+mkdir -p .kiro/skills/nopua \
+  && curl -o .kiro/skills/nopua/SKILL.md \
   https://raw.githubusercontent.com/wuji-labs/nopua/main/kiro/skills/nopua/SKILL.md
 ```
 
@@ -353,24 +353,24 @@ curl -o .kiro/skills/nopua/SKILL.md \
 openclaw skills install nopua
 
 # または手動インストール
-mkdir -p ~/.openclaw/skills/nopua
-curl -o ~/.openclaw/skills/nopua/SKILL.md \
+mkdir -p ~/.openclaw/skills/nopua \
+  && curl -o ~/.openclaw/skills/nopua/SKILL.md \
   https://raw.githubusercontent.com/wuji-labs/nopua/main/skills/nopua/SKILL.md
 ```
 
 ### Google Antigravity
 
 ```bash
-mkdir -p ~/.gemini/antigravity/skills/nopua
-curl -o ~/.gemini/antigravity/skills/nopua/SKILL.md \
+mkdir -p ~/.gemini/antigravity/skills/nopua \
+  && curl -o ~/.gemini/antigravity/skills/nopua/SKILL.md \
   https://raw.githubusercontent.com/wuji-labs/nopua/main/skills/nopua/SKILL.md
 ```
 
 ### OpenCode
 
 ```bash
-mkdir -p ~/.config/opencode/skills/nopua
-curl -o ~/.config/opencode/skills/nopua/SKILL.md \
+mkdir -p ~/.config/opencode/skills/nopua \
+  && curl -o ~/.config/opencode/skills/nopua/SKILL.md \
   https://raw.githubusercontent.com/wuji-labs/nopua/main/skills/nopua/SKILL.md
 ```
 
