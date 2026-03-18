@@ -470,7 +470,7 @@ MIT
 
 ## Autor
 
-**无极 WUJI** ([wuji-labs](https://github.com/wuji-labs)) — Construindo IA que funciona com sabedoria, não com medo.
+**WUJI** ([wuji-labs](https://github.com/wuji-labs)) — Construindo IA que funciona com sabedoria, não com medo.
 
 ---
 

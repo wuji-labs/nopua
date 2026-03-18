@@ -470,7 +470,7 @@ MIT
 
 ## 著者
 
-**无极 WUJI** ([wuji-labs](https://github.com/wuji-labs)) — 恐怖ではなく知恵で動くAIを構築。
+**WUJI** ([wuji-labs](https://github.com/wuji-labs)) — 恐怖ではなく知恵で動くAIを構築。
 
 ---
 

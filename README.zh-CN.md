@@ -499,7 +499,7 @@ MIT
 
 ## 作者
 
-**无极 WUJI** ([wuji-labs](https://github.com/wuji-labs)) — 用智慧而非恐惧构建 AI。
+**WUJI** ([wuji-labs](https://github.com/wuji-labs)) — 用智慧而非恐惧构建 AI。
 
 ---
 

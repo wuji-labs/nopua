@@ -500,7 +500,7 @@ MIT
 
 ## Author
 
-**无极 WUJI** ([wuji-labs](https://github.com/wuji-labs)) — Building AI that works with wisdom, not fear.
+**WUJI** ([wuji-labs](https://github.com/wuji-labs)) — Building AI that works with wisdom, not fear.
 
 ---
 

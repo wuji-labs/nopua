@@ -470,7 +470,7 @@ MIT
 
 ## 저자
 
-**无极 WUJI** ([wuji-labs](https://github.com/wuji-labs)) — 두려움이 아닌 지혜로 작동하는 AI를 만듭니다.
+**WUJI** ([wuji-labs](https://github.com/wuji-labs)) — 두려움이 아닌 지혜로 작동하는 AI를 만듭니다.
 
 ---
 

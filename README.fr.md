@@ -470,7 +470,7 @@ MIT
 
 ## Auteur
 
-**无极 WUJI** ([wuji-labs](https://github.com/wuji-labs)) — Construire une IA qui fonctionne avec sagesse, pas avec peur.
+**WUJI** ([wuji-labs](https://github.com/wuji-labs)) — Construire une IA qui fonctionne avec sagesse, pas avec peur.
 
 ---
 
