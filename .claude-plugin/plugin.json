@@ -15,6 +15,8 @@
     { "name": "nopua-fr", "path": "skills/nopua-fr/SKILL.md", "language": "fr" }
   ],
   "agents": [
-    { "name": "nopua-mentor", "path": "agents/nopua-mentor.md" }
+    { "name": "nopua-mentor", "path": "agents/nopua-mentor.md" },
+    { "name": "nopua-mentor-en", "path": "agents/nopua-mentor-en.md" },
+    { "name": "nopua-mentor-ja", "path": "agents/nopua-mentor-ja.md" }
   ]
 }
