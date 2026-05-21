@@ -6,7 +6,8 @@
   "homepage": "https://github.com/wuji-labs/nopua",
   "license": "MIT",
   "skills": [
-    { "name": "nopua", "path": "skills/nopua/SKILL.md", "language": "zh-CN" },
+    { "name": "nopua", "path": "skills/nopua/SKILL.md", "language": "en" },
+    { "name": "nopua-zh", "path": "skills/nopua-zh/SKILL.md", "language": "zh-CN" },
     { "name": "nopua-en", "path": "skills/nopua-en/SKILL.md", "language": "en" },
     { "name": "nopua-ja", "path": "skills/nopua-ja/SKILL.md", "language": "ja" },
     { "name": "nopua-ko", "path": "skills/nopua-ko/SKILL.md", "language": "ko" },
