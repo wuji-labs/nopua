@@ -1,18 +1,12 @@
-﻿{
+{
   "name": "nopua",
   "version": "2.0.0",
-  "description": "The anti-PUA. Drives AI with wisdom, trust, and inner motivation instead of fear and threats. Based on Dao De Jing philosophy. 7 languages, 7 platforms.",
+  "description": "The anti-PUA. Drives AI with wisdom, trust, and inner motivation instead of fear and threats. Based on Dao De Jing philosophy. 7 platforms.",
   "author": "WUJI (wuji-labs)",
   "homepage": "https://github.com/wuji-labs/nopua",
   "license": "MIT",
   "skills": [
-    { "name": "nopua", "path": "skills/nopua/SKILL.md", "language": "zh-CN" },
-    { "name": "nopua-en", "path": "skills/nopua-en/SKILL.md", "language": "en" },
-    { "name": "nopua-ja", "path": "skills/nopua-ja/SKILL.md", "language": "ja" },
-    { "name": "nopua-ko", "path": "skills/nopua-ko/SKILL.md", "language": "ko" },
-    { "name": "nopua-es", "path": "skills/nopua-es/SKILL.md", "language": "es" },
-    { "name": "nopua-pt", "path": "skills/nopua-pt/SKILL.md", "language": "pt" },
-    { "name": "nopua-fr", "path": "skills/nopua-fr/SKILL.md", "language": "fr" }
+    { "name": "nopua", "path": "skills/nopua/SKILL.md", "language": "zh-CN" }
   ],
   "agents": [
     { "name": "nopua-mentor", "path": "agents/nopua-mentor.md" }
