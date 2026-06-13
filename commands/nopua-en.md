@@ -1,3 +1,7 @@
+---
+description: "Manually activate NoPUA clarity mode when stuck — identify the failure pattern and work through stop → observe → transform → act → transcend, driven by wisdom rather than fear."
+---
+
 # /nopua
 
 Manually trigger NoPUA skill. When you're stuck, type `/nopua` to activate clarity mode.
